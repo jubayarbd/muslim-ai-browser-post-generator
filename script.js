@@ -72,7 +72,8 @@ async function generateImage() {
     const city = citySelect.options[citySelect.selectedIndex].text.split(' ')[0]; // Extract just the English name
     const country = 'Bangladesh';
     const dateInput = document.getElementById('date').value;
-    const hijriAdjustValue = parseInt(document.getElementById('hijri-adjust').value) || 0;
+    // এপিআই এর হিজরি ডেট থেকে সব সময় -১ দিন কমানো হলো
+    const hijriAdjustValue = (parseInt(document.getElementById('hijri-adjust').value) || 0) - 1;
     const madhabValue = document.getElementById('madhab').value || '1';
 
     let apiDate = "";
@@ -188,8 +189,8 @@ function drawOnCanvas(timings, city, country, gregorian, hijri) {
     // সাহরির শেষ সময় হবে ফজরের সময় থেকে ৩ মিনিট আগে 
     let baseSahri = addMinutes(timings.Fajr, -3);
     let finalSahri = addMinutes(baseSahri, sahriAdjustValue);
-
-    let finalIftar = addMinutes(timings.Maghrib, iftarAdjustValue);
+    // ইফতারের ডিফল্ট টাইমের সাথে সব ক্ষেত্রেই ১ মিনিট যোগ করা হলো
+    let finalIftar = addMinutes(timings.Maghrib, iftarAdjustValue + 1);
 
     // ভেতরের কালো টেক্সট
     ctx.fillStyle = "#000000";
