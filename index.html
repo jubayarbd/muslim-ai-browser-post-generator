@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muslim AI Browser - Daily Post Generator</title>
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-moon"></i>
+                <h1>Muslim AI Browser</h1>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-sun" id="theme-icon"></i>
+            </button>
+        </header>
+
+        <div class="main-content">
+            <div class="controls glass-panel">
+                <div class="input-group">
+                    <label>City (শহর)</label>
+                    <select id="city">
+                        <option value="Bagerhat">Bagerhat (বাগেরহাট)</option>
+                        <option value="Bandarban">Bandarban (বান্দরবান)</option>
+                        <option value="Barguna">Barguna (বরগুনা)</option>
+                        <option value="Barishal">Barishal (বরিশাল)</option>
+                        <option value="Bhola">Bhola (ভোলা)</option>
+                        <option value="Bogura">Bogura (বগুড়া)</option>
+                        <option value="Brahmanbaria">Brahmanbaria (ব্রাহ্মণবাড়িয়া)</option>
+                        <option value="Chandpur">Chandpur (চাঁদপুর)</option>
+                        <option value="Chattogram">Chattogram (চট্টগ্রাম)</option>
+                        <option value="Chuadanga">Chuadanga (চুয়াডাঙ্গা)</option>
+                        <option value="Cox's Bazar">Cox's Bazar (কক্সবাজার)</option>
+                        <option value="Cumilla">Cumilla (কুমিল্লা)</option>
+                        <option value="Dhaka">Dhaka (ঢাকা)</option>
+                        <option value="Dinajpur">Dinajpur (দিনাজপুর)</option>
+                        <option value="Faridpur">Faridpur (ফরিদপুর)</option>
+                        <option value="Feni">Feni (ফেনী)</option>
+                        <option value="Gaibandha">Gaibandha (গাইবান্ধা)</option>
+                        <option value="Gazipur">Gazipur (গাজীপুর)</option>
+                        <option value="Gopalganj">Gopalganj (গোপালগঞ্জ)</option>
+                        <option value="Habiganj">Habiganj (হবিগঞ্জ)</option>
+                        <option value="Jamalpur">Jamalpur (জামালপুর)</option>
+                        <option value="Jashore">Jashore (যশোর)</option>
+                        <option value="Jhalokati">Jhalokati (ঝালকাঠি)</option>
+                        <option value="Jhenaidah">Jhenaidah (ঝিনাইদহ)</option>
+                        <option value="Joypurhat">Joypurhat (জয়পুরহাট)</option>
+                        <option value="Khagrachari">Khagrachari (খাগড়াছড়ি)</option>
+                        <option value="Khulna">Khulna (খুলনা)</option>
+                        <option value="Kishoreganj">Kishoreganj (কিশোরগঞ্জ)</option>
+                        <option value="Kurigram">Kurigram (কুড়িগ্রাম)</option>
+                        <option value="Kushtia">Kushtia (কুষ্টিয়া)</option>
+                        <option value="Lakshmipur">Lakshmipur (লক্ষ্মীপুর)</option>
+                        <option value="Lalmonirhat">Lalmonirhat (লালমনিরহাট)</option>
+                        <option value="Madaripur">Madaripur (মাদারীপুর)</option>
+                        <option value="Magura">Magura (মাগুরা)</option>
+                        <option value="Manikganj">Manikganj (মানিকগঞ্জ)</option>
+                        <option value="Meherpur">Meherpur (মেহেরপুর)</option>
+                        <option value="Moulvibazar">Moulvibazar (মৌলভীবাজার)</option>
+                        <option value="Munshiganj">Munshiganj (মুন্সিগঞ্জ)</option>
+                        <option value="Mymensingh">Mymensingh (ময়মনসিংহ)</option>
+                        <option value="Naogaon">Naogaon (নওগাঁ)</option>
+                        <option value="Narail">Narail (নড়াইল)</option>
+                        <option value="Narayanganj">Narayanganj (নারায়ণগঞ্জ)</option>
+                        <option value="Narsingdi">Narsingdi (নরসিংদী)</option>
+                        <option value="Natore">Natore (নাটোর)</option>
+                        <option value="Nawabganj">Nawabganj (নবাবগঞ্জ)</option>
+                        <option value="Netrokona">Netrokona (নেত্রকোনা)</option>
+                        <option value="Nilphamari">Nilphamari (নীলফামারী)</option>
+                        <option value="Noakhali">Noakhali (নোয়াখালী)</option>
+                        <option value="Pabna">Pabna (পাবনা)</option>
+                        <option value="Panchagarh">Panchagarh (পঞ্চগড়)</option>
+                        <option value="Patuakhali">Patuakhali (পটুয়াখালী)</option>
+                        <option value="Pirojpur">Pirojpur (পিরোজপুর)</option>
+                        <option value="Rajbari">Rajbari (রাজবাড়ী)</option>
+                        <option value="Rajshahi">Rajshahi (রাজশাহী)</option>
+                        <option value="Rangamati">Rangamati (রাঙ্গামাটি)</option>
+                        <option value="Rangpur" selected>Rangpur (রংপুর)</option>
+                        <option value="Satkhira">Satkhira (সাতক্ষীরা)</option>
+                        <option value="Shariatpur">Shariatpur (শরীয়তপুর)</option>
+                        <option value="Sherpur">Sherpur (শেরপুর)</option>
+                        <option value="Sirajganj">Sirajganj (সিরাজগঞ্জ)</option>
+                        <option value="Sunamganj">Sunamganj (সুনামগঞ্জ)</option>
+                        <option value="Sylhet">Sylhet (সিলেট)</option>
+                        <option value="Tangail">Tangail (টাঙ্গাইল)</option>
+                        <option value="Thakurgaon">Thakurgaon (ঠাকুরগাঁও)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Date (তারিখ)</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="input-group">
+                    <label>Hijri Adjust (হিজরি +/-)</label>
+                    <select id="hijri-adjust">
+                        <option value="-2">-২ দিন</option>
+                        <option value="-1">-১ দিন</option>
+                        <option value="0" selected>০ দিন (সঠিক)</option>
+                        <option value="1">+১ দিন</option>
+                        <option value="2">+২ দিন</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Madhab (মাযহাব)</label>
+                    <select id="madhab">
+                        <option value="0">Standard (Shafi)</option>
+                        <option value="1" selected>Hanafi</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Sahri Adjust (সাহরি মি.)</label>
+                    <input type="number" id="sahri-adjust" value="0">
+                </div>
+                <div class="input-group">
+                    <label>Iftar Adjust (ইফতার মি.)</label>
+                    <input type="number" id="iftar-adjust" value="0">
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="generateImage()">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> ডিজাইন তৈরি করুন
+                    </button>
+                    <button class="btn btn-success" onclick="downloadImage()">
+                        <i class="fa-solid fa-download"></i> ডাউনলোড করুন
+                    </button>
+                </div>
+            </div>
+
+            <div id="error-alert" class="alert-box"></div>
+
+            <div class="canvas-container glass-panel">
+                <canvas id="myCanvas" width="1080" height="1080"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
