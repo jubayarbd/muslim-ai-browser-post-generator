@@ -147,13 +147,13 @@ function drawOnCanvas(timings, city, country, gregorian, hijri) {
 
     // মূল টেবিল (শুরু কলাম)
     const mainTimeX = 735;
-    const fajrY = 355;
+    const fajrY = 351;
     const dhuhrY = 400;
     const asrY = 445;
-    const maghribY = 490;
-    const ishaY = 535;
-    const duhaY = 580;
-    const tahajjudY = 625;
+    const maghribY = 491;
+    const ishaY = 539;
+    const duhaY = 585;
+    const tahajjudY = 630;
 
     // সাহরি ও ইফতার (বাম দিকের টেবিল)
     const botLeftX = 485;      // "সময়" কলামের নিচে এলাইন করার জন্য একটু বামে সরানো হলো (আগে 440 ছিল)
@@ -239,3 +239,4 @@ bgImage.onload = () => {
         ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
     });
 };
+
